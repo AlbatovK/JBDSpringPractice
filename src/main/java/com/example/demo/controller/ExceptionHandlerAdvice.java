@@ -11,4 +11,9 @@ public class ExceptionHandlerAdvice {
     public ResponseEntity<String> handleIndexOutOfBoundsException(IndexOutOfBoundsException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getLocalizedMessage());
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getLocalizedMessage());
+    }
 }
